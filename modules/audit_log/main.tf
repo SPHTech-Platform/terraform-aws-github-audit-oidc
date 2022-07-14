@@ -15,8 +15,8 @@ module "github_role" {
 
   create_role = true
 
-  role_name        = "github-audit-logs"
-  role_description = "Used by Github to stream audit logs to S3"
+  role_name        = var.role_name
+  role_description = var.role_description
 
   role_permissions_boundary_arn = var.iam_boundary_arn
 
