@@ -38,3 +38,8 @@ data "aws_iam_policy_document" "audit_bucket" {
     ]
   }
 }
+
+resource "aws_iam_role_policy" "audit_bucket" {
+  role   = module.github_role.iam_role_name
+  policy = data.aws_iam_policy_document.audit_bucket.json
+}
